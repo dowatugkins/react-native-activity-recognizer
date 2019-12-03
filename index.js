@@ -2,16 +2,16 @@ import { NativeModules, NativeEventEmitter } from 'react-native';
 
 const { ActivityRecognizer } = NativeModules;
 
-const emitter = new NativeEventEmitter(RNActivityRecognition);
+const emitter = new NativeEventEmitter(ActivityRecognizer);
 var subscription = null;
 
 var ActivityRecognition = {
-  'ANDROID_STILL': ActivityRecognitionNative.ANDROID_STILL,
-  'ANDROID_WALKING': ActivityRecognitionNative.ANDROID_WALKING,
-  'ANDROID_IN_VEHICLE': ActivityRecognitionNative.ANDROID_IN_VEHICLE,
-  'IOS_STATIONARY': RNActivityRecognition.IOS_STATIONARY,
-  'IOS_WALKING': RNActivityRecognition.IOS_WALKING,
-  'IOS_AUTOMOTIVE': RNActivityRecognition.IOS_AUTOMOTIVE,
+  'ANDROID_STILL': ActivityRecognizer.ANDROID_STILL,
+  'ANDROID_WALKING': ActivityRecognizer.ANDROID_WALKING,
+  'ANDROID_IN_VEHICLE': ActivityRecognizer.ANDROID_IN_VEHICLE,
+  'IOS_STATIONARY': ActivityRecognizer.IOS_STATIONARY,
+  'IOS_WALKING': ActivityRecognizer.IOS_WALKING,
+  'IOS_AUTOMOTIVE': ActivityRecognizer.IOS_AUTOMOTIVE,
 
   subscribe: function(success: Function) {
     subscription = emitter.addListener(
@@ -31,25 +31,25 @@ var ActivityRecognition = {
 
   start: function(time: number) {
     return new Promise((resolve, reject) => {
-      RNActivityRecognition.startActivity(time, logAndReject.bind(null, resolve, reject))
+      ActivityRecognizer.startActivity(time, logAndReject.bind(null, resolve, reject))
     })
   },
 
   startMocked: function(time: number, mockActivity: string) {
     return new Promise((resolve, reject) => {
-      RNActivityRecognition.startMockedActivity(time, mockActivity, logAndReject.bind(null, resolve, reject))
+      ActivityRecognizer.startMockedActivity(time, mockActivity, logAndReject.bind(null, resolve, reject))
     })
   },
 
   stopMocked: function() {
     return new Promise((resolve, reject) => {
-      RNActivityRecognition.stopMockedActivity(logAndReject.bind(null, resolve, reject))
+      ActivityRecognizer.stopMockedActivity(logAndReject.bind(null, resolve, reject))
     })
   },
 
   stop: function() {
     return new Promise((resolve, reject) => {
-      RNActivityRecognition.stopActivity(logAndReject.bind(null, resolve, reject))
+      ActivityRecognizer.stopActivity(logAndReject.bind(null, resolve, reject))
     })
   }
 }
