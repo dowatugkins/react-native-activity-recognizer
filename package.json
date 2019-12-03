@@ -1,0 +1,33 @@
+{
+  "name": "react-native-activity-recognizer",
+  "title": "React Native Activity Recognizer",
+  "version": "1.0.0",
+  "description": "Recognize activity types natively",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dowatugkins/react-native-activity-recognizer.git",
+    "baseUrl": "https://github.com/dowatugkins/react-native-activity-recognizer"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": {
+    "name": "Doug Watkins",
+    "email": "doug@dougwatkinsdev.com"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-native": ">=0.59.0-rc.0 <1.0.x"
+  },
+  "devDependencies": {
+    "react": "^16.8.3",
+    "react-native": "^0.59.10"
+  }
+}
