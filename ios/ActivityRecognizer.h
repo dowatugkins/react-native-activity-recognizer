@@ -1,5 +1,8 @@
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
+#import <CoreMotion/CoreMotion.h>
 
-@interface ActivityRecognizer : NSObject <RCTBridgeModule>
+@interface ActivityRecognizer : RCTEventEmitter <RCTBridgeModule>
+  @property(nonatomic, strong) CMMotionActivityManager *motionActivityManager;
 
 @end
