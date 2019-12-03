@@ -64,4 +64,6 @@ function logAndReject(resolve, reject, errorMsg) {
   resolve()
 }
 
+module.exports = ActivityRecognizer;
+
 export default ActivityRecognizer;
