@@ -1,4 +1,3 @@
-// import ActivityRecognizer from './app';
-const ActivityRecognizer = require('./app');
+const ActivityRecognizer = require('./src/ActivityRecognizer');
 
 module.exports = ActivityRecognizer;
