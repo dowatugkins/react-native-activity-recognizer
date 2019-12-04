@@ -19,7 +19,7 @@ float _timeout = 1.0;
 
 - (NSArray<NSString *> *)supportedEvents
 {
-    return @[@"ActivityDetection"];
+    return @[@"DetectedActivity"];
 }
 
 - (NSString *)generateAct: (CMMotionActivity *) activity {
@@ -70,7 +70,7 @@ float _timeout = 1.0;
                                                         _activityEvent = @{
                                                             act: @(activity.confidence)
                                                         };
-                                                        [self sendEventWithName:@"ActivityDetection" body: _activityEvent];
+                                                        [self sendEventWithName:@"DetectedActivity" body: _activityEvent];
                                                     }
          ];
     } else {
@@ -87,7 +87,7 @@ float _timeout = 1.0;
 
     dispatch_async(dispatch_get_main_queue(), ^{
         _activityEvent = @{ mockActivity: @100 };
-        [self sendEventWithName:@"ActivityDetection" body: _activityEvent];
+        [self sendEventWithName:@"DetectedActivity" body: _activityEvent];
     });
 }
 
