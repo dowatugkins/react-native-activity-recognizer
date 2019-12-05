@@ -10,7 +10,8 @@
 
 - (dispatch_queue_t)methodQueue
 {
-  return dispatch_queue_create("com.dougwatkinsdev.activityregognizer", DISPATCH_QUEUE_SERIAL);
+  // return dispatch_queue_create("com.dougwatkinsdev.activityrecognizer", DISPATCH_QUEUE_SERIAL);
+  return dispatch_get_main_queue();
 }
 
 + (BOOL)requiresMainQueueSetup
