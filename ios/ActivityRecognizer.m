@@ -16,7 +16,7 @@
 
 + (BOOL)requiresMainQueueSetup
 {
-  return NO;
+  return YES;
 }
 
 RCT_EXPORT_MODULE()
